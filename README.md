@@ -1,1 +1,0 @@
-# wizrdez.github.io
