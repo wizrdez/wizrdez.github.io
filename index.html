@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: pink;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        h1 {
+            color: red;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 30px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        #yes {
+            background-color: red;
+            color: white;
+        }
+        #no {
+            background-color: white;
+            color: black;
+            position: absolute;
+        }
+        .hidden {
+            display: none;
+        }
+        #cat-gif {
+            width: 300px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="question">Leszel a valentinom?</h1>
+    
+    <div class="buttons" id="buttons">
+        <button id="yes" onclick="showCat()">Igen</button>
+        <button id="no" onmouseover="moveButton()">Nem</button>
+    </div>
+
+    <!-- ✅ Use a working GIF link -->
+    <img id="cat-gif" class="hidden" src="https://media1.tenor.com/m/fitGu2TwtHoAAAAd/cat-hyppy.gif" alt="Dancing Cat">
+
+    <script>
+        function moveButton() {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            document.getElementById("no").style.left = x + "px";
+            document.getElementById("no").style.top = y + "px";
+        }
+
+        function showCat() {
+            document.getElementById("question").classList.add("hidden");
+            document.getElementById("buttons").classList.add("hidden");
+            document.getElementById("cat-gif").classList.remove("hidden");
+        }
+    </script>
+
+</body>
+</html>
